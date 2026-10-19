@@ -421,3 +421,4 @@ pytest
 ### 4. Database Volume Permissions
 - **Cause**: Docker volume created with conflicting UID.
 - **Solution**: Run `docker compose down -v` and rebuild with `docker compose up --build -d`.
+# fast_api_demo
