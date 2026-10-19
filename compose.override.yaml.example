@@ -1,0 +1,12 @@
+# Development override file
+# Copy this file to `compose.override.yaml` for local live-reload development:
+#   cp compose.override.yaml.example compose.override.yaml
+
+services:
+  api:
+    volumes:
+      - .:/app
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    environment:
+      - DEBUG=true
+

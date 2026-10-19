@@ -1,0 +1,78 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/health",
+        "function": "api"
+      },
+      {
+        "source": "/health/ready",
+        "function": "api"
+      },
+      {
+        "source": "/api/v1/users",
+        "function": "api"
+      },
+      {
+        "source": "/api/v1/users/**",
+        "function": "api"
+      },
+      {
+        "source": "/docs",
+        "function": "api"
+      },
+      {
+        "source": "/redoc",
+        "function": "api"
+      },
+      {
+        "source": "/openapi.json",
+        "function": "api"
+      }
+    ]
+  },
+  "apis": [
+    {
+      "path": "/health",
+      "method": "GET",
+      "description": "Health check"
+    },
+    {
+      "path": "/health/ready",
+      "method": "GET",
+      "description": "Readiness check"
+    },
+    {
+      "path": "/api/v1/users",
+      "method": "POST",
+      "description": "Create user"
+    },
+    {
+      "path": "/api/v1/users",
+      "method": "GET",
+      "description": "List users"
+    },
+    {
+      "path": "/api/v1/users/:user_id",
+      "method": "GET",
+      "description": "Get user by ID"
+    },
+    {
+      "path": "/api/v1/users/:user_id",
+      "method": "PUT",
+      "description": "Update user by ID"
+    },
+    {
+      "path": "/api/v1/users/:user_id",
+      "method": "DELETE",
+      "description": "Delete user by ID"
+    }
+  ]
+}
+

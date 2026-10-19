@@ -1,0 +1,37 @@
+# FastAPI Demo API Registry
+# Contains all endpoints provided by the application
+
+[Health]
+GET /health
+Description: Basic application health check
+
+GET /health/ready
+Description: Database readiness and connectivity ping (SELECT 1)
+
+[Users]
+POST /api/v1/users
+Description: Create a new user record
+Request Body: {"email": "string", "username": "string", "full_name": "string", "is_active": true}
+Response: 201 Created
+
+GET /api/v1/users
+Description: List users with pagination
+Query Parameters: skip (int, default 0), limit (int, default 20)
+Response: 200 OK
+
+GET /api/v1/users/{user_id}
+Description: Retrieve single user by ID
+Path Parameter: user_id (int)
+Response: 200 OK
+
+PUT /api/v1/users/{user_id}
+Description: Update user fields by ID
+Path Parameter: user_id (int)
+Request Body: {"email": "string", "username": "string", "full_name": "string", "is_active": true}
+Response: 200 OK
+
+DELETE /api/v1/users/{user_id}
+Description: Delete user by ID
+Path Parameter: user_id (int)
+Response: 204 No Content
+
